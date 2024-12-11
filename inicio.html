@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <h1>Los Analistas de Montepinar</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="inicio">Inicio</a></li>
+                <li><a href="#" id="trabajos">Trabajos</a></li>
+                <li><a href="#" id="objetivo">Objetivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section id="contenido-inicio" class="contenido-pestana">
+            <h2>Bienvenido a mi blog</h2>
+            <hr>
+            <p class="subtitulo">¿Quiénes somos?</p>
+            <p>Somos los mejores en lo que hacemos y vamos a demostrar que nuestro blog será el mejor de SOR. Aquí compartimos nuestros proyectos, trabajos y todo lo que hemos aprendido en el camino.</p>
+        </section>
+
+        <section id="contenido-trabajos" class="contenido-pestana">
+            <h2>Trabajos del Mes:</h2>
+            <div class="calendario">
+                <!-- Calendario de Diciembre -->
+                <div class="mes">
+                    <h3>Diciembre</h3>
+                    <div class="dias">
+                        <div class="dia-card" id="dia-11"><p>1</p></div>
+                        <div class="dia-card" id="dia-12"><p>2</p></div>
+                        <div class="dia-card" id="dia-13"><p>3</p></div>
+                        <div class="dia-card" id="dia-14"><p>4</p></div>
+                        <div class="dia-card" id="dia-15"><p>5</p></div>
+                        <div class="dia-card" id="dia-16"><p>6</p></div>
+                        <div class="dia-card" id="dia-17"><p>7</p></div>
+                        <div class="dia-card" id="dia-18"><p>8</p></div>
+                        <div class="dia-card" id="dia-19"><p>9</p></div>
+                        <div class="dia-card" id="dia-20"><p>10</p></div>
+                    </div>
+                </div>
+
+                <!-- Calendario de Enero -->
+                <div class="mes">
+                    <h3>Enero</h3>
+                    <div class="dias">
+                        <div class="dia-card" id="dia-1"><p>1</p></div>
+                        <div class="dia-card" id="dia-2"><p>2</p></div>
+                        <div class="dia-card" id="dia-3"><p>3</p></div>
+                        <div class="dia-card" id="dia-4"><p>4</p></div>
+                        <div class="dia-card" id="dia-5"><p>5</p></div>
+                        <div class="dia-card" id="dia-6"><p>6</p></div>
+                        <div class="dia-card" id="dia-7"><p>7</p></div>
+                        <div class="dia-card" id="dia-8"><p>8</p></div>
+                        <div class="dia-card" id="dia-9"><p>9</p></div>
+                        <div class="dia-card" id="dia-10"><p>10</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detalle-dia" id="detalle-dia">
+                <p>Selecciona un día para ver lo que se hizo ese día.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Objetivo -->
+        <section id="contenido-objetivo" class="contenido-pestana">
+            <h2>Objetivo del Blog</h2>
+            <p>El objetivo de este blog es documentar todo el proceso de aprendizaje y desarrollo dentro de los proyectos de redes y servicios, enfocándonos especialmente en los trabajos y proyectos realizados durante el curso de 'Servicios en Red'.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mi Blog Profesional - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Modal para mostrar detalles de un día -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="detalle-modal">Cargando detalles...</div>
+            <button id="cerrar-modal" class="cerrar-boton">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        // Script para manejar la visibilidad de las pestañas
+        document.getElementById('inicio').addEventListener('click', function() {
+            mostrarPestana('contenido-inicio');
+        });
+
+        document.getElementById('trabajos').addEventListener('click', function() {
+            mostrarPestana('contenido-trabajos');
+        });
+
+        document.getElementById('objetivo').addEventListener('click', function() {
+            mostrarPestana('contenido-objetivo');
+        });
+
+        document.querySelectorAll('.dia-card').forEach(function(dia) {
+            dia.addEventListener('click', function() {
+                let diaId = this.id;
+                mostrarDetalleDia(diaId);
+            });
+        });
+
+        function mostrarPestana(idPestana) {
+            document.querySelectorAll('.contenido-pestana').forEach(function(pestana) {
+                pestana.style.display = 'none';
+            });
+            document.getElementById(idPestana).style.display = 'block';
+        }
+
+        function mostrarDetalleDia(diaId) {
+            let detalles = {
+                'dia-1': '<p>El 1 de enero, completamos el análisis del proyecto y comenzamos la planificación.</p>',
+                'dia-2': '<p>El 2 de enero, avanzamos en la configuración de servidores y redes.</p>',
+                'dia-3': '<p>El 3 de enero, revisamos la infraestructura y realizamos pruebas de conectividad.</p>',
+                'dia-4': '<p>El 4 de enero, se implementaron las configuraciones finales en los servidores.</p>',
+                'dia-5': '<p>El 5 de enero, se verificó la conectividad entre los sistemas y ajustamos parámetros.</p>',
+                'dia-6': '<p>El 6 de enero, realizamos pruebas de seguridad y configuramos accesos remotos.</p>',
+                'dia-11': '<p>El 1 de diciembre, comenzamos el análisis de nuevos proyectos para el nuevo año.</p>',
+                'dia-20': '<p>El grupo de Analistas de Montepinar intentó hacer ping entre los equipos de cada participante.</p><img src="PING.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"><br><p>No conseguimos acceder ya que no permite la conexión por ping de servidores...</p><br><p>Probamos luego a filtrar en Wireshark y no dejaba filtrar nada por un error en el punto de acceso.</p><img src="icmp.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"><br><p>Es importante tener la máquina virtual en adaptador puente.</p><img src="puente.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;">'
+            };
+            let detalle = detalles[diaId] || '<p>No hay detalles disponibles para este día.</p>';
+            document.getElementById('detalle-modal').innerHTML = detalle;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        // Cerrar el modal
+        document.getElementById('cerrar-modal').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Mostrar la primera pestaña por defecto
+        mostrarPestana('contenido-inicio');
+    </script>
+</body>
+</html>
