@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="#" id="inicio">Inicio</a></li>
                 <li><a href="#" id="trabajos">Trabajos</a></li>
-                <li><a href="#" id="objetivo">Objetivo</a></li> <!-- Nuevo apartado -->
+                <li><a href="#" id="objetivo">Objetivo</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +26,7 @@
         <section id="contenido-inicio" class="contenido-pestana">
             <h2>Bienvenido a mi blog</h2>
             <hr>
-            <p class="subtitulo">Sobre nosotros</p>
+            <p class="subtitulo">¿Quiénes somos?</p>
             <p>Somos los mejores en lo que hacemos y vamos a demostrar que nuestro blog será el mejor de SOR. Aquí compartimos nuestros proyectos, trabajos y todo lo que hemos aprendido en el camino.</p>
         </section>
 
@@ -130,7 +130,7 @@
                 'dia-5': '<p>El 5 de enero, se verificó la conectividad entre los sistemas y ajustamos parámetros.</p>',
                 'dia-6': '<p>El 6 de enero, realizamos pruebas de seguridad y configuramos accesos remotos.</p>',
                 'dia-11': '<p>El 1 de diciembre, comenzamos el análisis de nuevos proyectos para el nuevo año.</p>',
-                'dia-20': '<p>El grupo de Analistas de Montepinar intentó hacer ping entre los equipos de cada participante.</p><img src="PING.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"<br><p>Y no conseguimos acceder ya que no permite la conexion por ping de servidores... <br> <p>Probamos luego a filtrar en wireshark y no dejaba filtrar nada por un error en el punto de acceso</p><img src="icmp.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"<p><br> Y tambien es importante tener la maquina virtual en adaptador puente</p><img src="puente.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"</p>'
+                'dia-20': '<p>El grupo de Analistas de Montepinar intentó hacer ping entre los equipos de cada participante.</p><img src="PING.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"><br><p>No conseguimos acceder ya que no permite la conexión por ping de servidores...</p><br><p>Probamos luego a filtrar en Wireshark y no dejaba filtrar nada por un error en el punto de acceso.</p><img src="icmp.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;"><br><p>Es importante tener la máquina virtual en adaptador puente.</p><img src="puente.PNG" alt="Ping entre equipos" style="width:100%; max-width:400px;">'
             };
             let detalle = detalles[diaId] || '<p>No hay detalles disponibles para este día.</p>';
             document.getElementById('detalle-modal').innerHTML = detalle;
